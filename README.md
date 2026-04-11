@@ -1,16 +1,65 @@
-# React + Vite
+🍔 DevBurguer - Interface
+Este é o frontend da aplicação DevBurguer, uma plataforma completa de pedidos para uma hamburgueria moderna. O projeto foi desenvolvido com foco em experiência do usuário (UX), performance e código limpo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Status do Projeto: Em desenvolvimento 🚀
 
-Currently, two official plugins are available:
+*"Este projeto foi desenvolvido utilizando Yarn como gerenciador de pacotes"*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+💻 Sobre o Projeto
+A interface permite que os clientes naveguem pelo cardápio, adicionem produtos ao carrinho e finalizem seus pedidos. É a peça que conecta o cliente final ao poder da nossa DevBurguer API.
 
-## React Compiler
+Principais Funcionalidades:
+✅ Listagem de produtos dinâmica.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✅ Filtro por categorias.
 
-## Expanding the ESLint configuration
+✅ Carrinho de compras intuitivo.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Autenticação de usuários e administradores.
+
+✅ Área administrativa para controle de pedidos e estoque.
+
+🛠 Tecnologias Utilizadas
+O projeto utiliza o que há de mais moderno no ecossistema React:
+
+React: Biblioteca principal.
+
+Vite: Ferramenta de build ultrarrápida.
+
+Styled Components: Para estilização e temas.
+
+React Router Dom: Gerenciamento de rotas.
+
+Axios: Consumo da API.
+
+Biome: Linter e formatador de código (o terror dos espaços em branco!).
+
+## 🚀 Como Rodar a Aplicação
+
+Para clonar e executar este projeto em sua máquina, você precisará do **Node.js** e do **Yarn** instalados.
+
+### 1. Clonar o repositório
+```bash
+git clone [https://github.com/v-freire/devburguer-interface.git](https://github.com/v-freire/devburguer-interface.git)
+
+2. Instalar as dependências
+Bash
+yarn
+
+3. Executar o projeto
+Bash
+yarn dev
+A aplicação abrirá automaticamente em http://localhost:5173.
+
+🔗 Integração Full Stack
+Este frontend foi desenvolvido para trabalhar em conjunto com a DevBurguer API.
+Certifique-se de que o backend está rodando para que os dados sejam carregados corretamente.
+
+👉 Clique aqui para acessar o repositório do Backend
+
+👤 Autor
+Victor de Luna Freire
+
+LinkedIn: https://www.linkedin.com/in/victordelunafreire
+
+GitHub: @victordelunafreire-rgb
