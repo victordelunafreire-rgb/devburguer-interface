@@ -1,9 +1,9 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-
 import Logo from '../../assets/Logo.svg';
 import { Button } from '../../components/Button';
+import { api } from '../../services/api.js';
 import {
   Container,
   Form,
@@ -34,7 +34,14 @@ export function Login() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    const response = await api.post('/session', {
+      email: data.email,
+      password: data.password,
+    });
+
+    console.log(response);
+  };
 
   return (
     <Container>
