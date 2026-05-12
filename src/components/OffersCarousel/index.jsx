@@ -2,23 +2,26 @@ import { useEffect, useState } from 'react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { api } from '../../services/api';
-import { Container, ContainerItems, Title } from './styles';
+import { Container, Title } from './styles';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { CardProducts } from '../CardProducts';
 
-export function CategoriesCarousel() {
-  const [categories, setCategories] = useState([]);
+export function OffersCarousel() {
+  const [offers, setOffers] = useState([]);
 
   useEffect(() => {
-    async function loadCategories() {
-      const { data } = await api.get('/categories');
+    async function loadProducts() {
+      const { data } = await api.get('/products');
 
-      setCategories(data);
+      const onlyOffers = data.filter((product) => product.offer);
+
+      setOffers(onlyOffers);
     }
 
-    loadCategories();
+    loadProducts();
   }, []);
 
   const swiperBreakpoints = {
@@ -38,21 +41,19 @@ export function CategoriesCarousel() {
 
   return (
     <Container>
-      <Title>Categorias</Title>
+      <Title>Ofertas do Dia</Title>
 
       <Swiper
         modules={[Navigation, Pagination]}
-        loop={categories.length > 4}
+        loop={offers.length > 4}
         grabCursor={true}
         breakpoints={swiperBreakpoints}
         navigation={{ clickable: true }}
         className='mySwiperCategories'
       >
-        {categories.map((category) => (
-          <SwiperSlide key={category.id}>
-            <ContainerItems imageurl={category.url}>
-              <p>{category.name}</p>
-            </ContainerItems>
+        {offers.map((product) => (
+          <SwiperSlide key={product.id}>
+            <CardProducts product={product} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -29,7 +29,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const ContainerItens = styled.div`
+export const ContainerItems = styled.div`
   background: url('${(props) => props.imageurl}');
   background-position: center;
   background-size: cover;
@@ -40,6 +40,7 @@ export const ContainerItens = styled.div`
   padding: 20px 10px;
   width: 100%;
   height: 250px;
+  cursor: grab;
 
   p {
     color: #fff;
