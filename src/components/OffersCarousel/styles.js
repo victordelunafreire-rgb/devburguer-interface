@@ -12,6 +12,32 @@ export const Container = styled.div`
 
   padding-left: 40px;
   padding-bottom: 40px;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    &::after {
+      font-size: 20px;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  .swiper-button-next :hover,
+  .swiper-button-prev :hover {
+    background-color: rgba(0, 0, 0, 0.8)
+  }
 `;
 
 export const Title = styled.h2`

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { api } from '../../services/api';
+import { formatPrice } from '../../utils/formatPrice';
 import { Container, Title } from './styles';
 
 import 'swiper/css';
@@ -16,7 +17,12 @@ export function OffersCarousel() {
     async function loadProducts() {
       const { data } = await api.get('/products');
 
-      const onlyOffers = data.filter((product) => product.offer);
+      const onlyOffers = data
+        .filter((product) => product.offer)
+        .map((product) => ({
+          currencyValue: formatPrice(product.price),
+          ...product,
+        }));
 
       setOffers(onlyOffers);
     }

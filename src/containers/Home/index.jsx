@@ -11,7 +11,6 @@ export function Home() {
       <Container>
         <div>
           <CategoriesCarousel></CategoriesCarousel>
-          <div>Carrosel Produtos</div>
           <OffersCarousel />
         </div>
       </Container>
