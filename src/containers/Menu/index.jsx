@@ -4,6 +4,7 @@ import { CardProducts } from '../../components/CardProducts';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
 import {
+  BackButton,
   Banner,
   CategoriesMenu,
   CategoryButton,
@@ -107,12 +108,12 @@ export function Menu() {
           </CategoryButton>
         ))}
       </CategoriesMenu>
-
       <ProductsContainer>
         {filteredProducts.map((product) => (
           <CardProducts product={product} key={product.id} />
         ))}
       </ProductsContainer>
+      <BackButton onClick={() => navigate('/')}>{'<'}Voltar</BackButton>)
     </Container>
   );
 }
