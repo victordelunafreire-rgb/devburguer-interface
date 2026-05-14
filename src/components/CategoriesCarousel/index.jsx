@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { api } from '../../services/api';
-import { Container, ContainerItems, Title } from './styles';
+import { CategoryButton, Container, ContainerItems, Title } from './styles';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useNavigate } from 'react-router-dom';
 
 export function CategoriesCarousel() {
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadCategories() {
@@ -51,7 +53,16 @@ export function CategoriesCarousel() {
         {categories.map((category) => (
           <SwiperSlide key={category.id}>
             <ContainerItems imageurl={category.url}>
-              <p>{category.name}</p>
+              <CategoryButton
+                onClick={() => {
+                  navigate({
+                    pathname: '/cardapio',
+                    search: `?categoria=${category.id}`,
+                  });
+                }}
+              >
+                {category.name}
+              </CategoryButton>
             </ContainerItems>
           </SwiperSlide>
         ))}
