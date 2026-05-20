@@ -8,14 +8,14 @@ import { Register } from '../containers/Register';
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: 
-    (
-      <>
-      <Header />
-      <Home />
-      </>
+    element:
+      (
+        <>
+          <Header />
+          <Home />
+        </>
 
-    ),
+      ),
   },
   {
     path: '/login',
@@ -27,6 +27,12 @@ export const router = createBrowserRouter([
   },
   {
     path: '/cardapio',
-    element: <Menu />,
+    element: (
+      <>
+        <Header />
+        <Menu />
+      </>
+
+    ),
   },
 ]);
