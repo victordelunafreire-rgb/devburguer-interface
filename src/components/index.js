@@ -2,8 +2,10 @@ export * from './Button';
 export * from './CardProducts';
 export * from './CartButton';
 export * from './CartItens';
+export * from './CartResume';
 export * from './CategoriesCarousel';
 export * from './Footer';
 export * from './Header';
 export * from './OffersCarousel';
 export * from './Table';
+
