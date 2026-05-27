@@ -46,7 +46,7 @@
 .button {
   background: #0055de;
   font-family: Arial, sans-serif;
-  color: #ffffff;
+  color: ${(props) => props.theme.white}fff;
   border-radius: 4px;
   border: 0;
   padding: 12px 16px;
@@ -80,7 +80,7 @@
 }
 
 .spinner {
-  color: #ffffff;
+  color: ${(props) => props.theme.white}fff;
   font-size: 22px;
   text-indent: -99999px;
   margin: 0px auto;
@@ -193,7 +193,7 @@ table tbody tr:last-child td {
   text-align: center;
   text-decoration: none;
   background: #0055de;
-  color: #ffffff;
+  color: ${(props) => props.theme.white}fff;
   border-radius: 4px;
   border: 0;
   padding: 12px 16px;

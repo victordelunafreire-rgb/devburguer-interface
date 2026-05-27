@@ -6,7 +6,7 @@ import BannerHamburguer from '../../assets/banner-hamburguer.svg';
 export const Container = styled.div`
     width: 100%;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: ${(props) => props.theme.secondWhite};
 
     background: linear-gradient(
             rgba(255, 255, 255, 0.6),
@@ -24,7 +24,7 @@ export const Banner = styled.div`
     position: relative;
 
     background: url('${BannerHamburguer}') no-repeat;
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     background-position: center;
     background-size: cover;
     
@@ -33,7 +33,7 @@ export const Banner = styled.div`
         font-family: 'Road Rage', sans-serif;
         font-size: 80px;
         line-height: 60px;
-        color: #fff;
+        color: ${(props) => props.theme.white};
         position: absolute;
         
 
@@ -42,7 +42,7 @@ export const Banner = styled.div`
 
     span {
             display: block;
-            color: #fff;
+            color: ${(props) => props.theme.white};
             font-size: 20px;
         }
     }
@@ -60,13 +60,13 @@ export const CategoryButton = styled(Link)`
     text-decoration: none;
     cursor: pointer;
     background: none;
-    color: ${(props) => (props.isActiveCategory ? '#9758a6' : '#696969')};
+    color: ${(props) => (props.isActiveCategory ? (props) => props.theme.purple : '#696969')};
     font-size: 24px;
     font-weight: 500;
     padding-bottom: 5px;
     line-height: 20px;
     border: none;
-    border-bottom: ${(props) => props.$isActiveCategory && '3px solid #9758a6'};
+    border-bottom: ${(props) => props.$isActiveCategory && `3px solid ${(props) => props.theme.purple}`};
 
 `;
 
@@ -83,7 +83,7 @@ export const ProductsContainer = styled.div`
 export const BackButton = styled.button`
     background: none;
     border: none;
-    color: #9758a6;
+    color: ${(props) => props.theme.purple};
     cursor: pointer;
     font-size: 22px;
     font-weight: bold;
@@ -91,6 +91,6 @@ export const BackButton = styled.button`
     margin: 40px auto;
 
     &:hover {
-        color: #5C2669;
+        color: ${(props) => props.theme.darkPurple};
     }
 `;

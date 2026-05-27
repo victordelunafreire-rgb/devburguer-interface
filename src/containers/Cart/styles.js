@@ -10,11 +10,11 @@ export const Container = styled.div`
     ),
     url('${Background}');
     min-height: 100vh;
-`
+`;
 
 export const Banner = styled.div`
     background: url(${texture});
-    background-color: #1f1f1f;
+    background-color: ${(props) => props.theme.mainBlack};
     background-size: cover;
     background-position: center;
     display: flex;
@@ -26,13 +26,13 @@ export const Banner = styled.div`
     img {
         height: 130px;
     }
-`
+`;
 
 export const Title = styled.h1`
     font-size: 32px;
     font-weight: 800;
     padding-bottom: 12px;
-    color: #61a120;
+    color: ${(props) => props.theme.gren};
     text-align: center;
     position: relative;
 
@@ -42,10 +42,10 @@ export const Title = styled.h1`
         left: calc(50% - 28px);
         width: 56px;
         height: 4px;
-        background-color: #61a120;
+        background-color: ${(props) => props.theme.gren};
         bottom: 0;
     }
-`
+`;
 
 export const Content = styled.div`
     display: grid;
@@ -55,4 +55,4 @@ export const Content = styled.div`
     padding: 40px;
     margin: 0 auto;
     gap: 40px;
-`
+`;
