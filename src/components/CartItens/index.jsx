@@ -2,10 +2,17 @@ import TrashIcon from '../../assets/trash.svg';
 import { useCart } from '../../hooks/CartContext';
 import { formatPrice } from '../../utils/formatPrice';
 import { Table } from '../index';
-import { ButtonGroup, EmptyCart, ProductImage, TotalPrice, TrashImage } from './styles';
+import {
+  ButtonGroup,
+  EmptyCart,
+  ProductImage,
+  TotalPrice,
+  TrashImage,
+} from './styles';
 
 export function CartItens() {
-  const { cartProducts, increaseProduct, decreaseProduct, deleteProduct } = useCart();
+  const { cartProducts, increaseProduct, decreaseProduct, deleteProduct } =
+    useCart();
 
   console.log(cartProducts);
 
@@ -32,23 +39,41 @@ export function CartItens() {
               <Table.Td>{product.currencyValue}</Table.Td>
               <Table.Td>
                 <ButtonGroup>
-                  <button onClick={() => decreaseProduct(product.id)}>-</button>
+                  <button
+                    type='button'
+                    onClick={() => decreaseProduct(product.id)}
+                  >
+                    -
+                  </button>
                   {product.quantity}
-                <button onClick={() => increaseProduct(product.id)}>+</button>
+                  <button
+                    type='button'
+                    onClick={() => increaseProduct(product.id)}
+                  >
+                    +
+                  </button>
                 </ButtonGroup>
-                </Table.Td>
+              </Table.Td>
               <Table.Td>
                 <TotalPrice>
                   {formatPrice(product.quantity * product.price)}
                 </TotalPrice>
               </Table.Td>
               <Table.Td>
-                <TrashImage src={TrashIcon} alt='lixeira' onClick={() => deleteProduct(product.id)} />
+                <TrashImage
+                  src={TrashIcon}
+                  alt='lixeira'
+                  onClick={() => deleteProduct(product.id)}
+                />
               </Table.Td>
             </Table.Tr>
           ))
         ) : (
-          <EmptyCart>O carrinho está vazio</EmptyCart>
+          <Table.Tr>
+            <Table.Td colSpan={6}>
+              <EmptyCart>O carrinho está vazio</EmptyCart>
+            </Table.Td>
+          </Table.Tr>
         )}
       </Table.Body>
     </Table.Root>

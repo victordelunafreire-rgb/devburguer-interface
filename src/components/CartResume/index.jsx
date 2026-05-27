@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { Bounce, toast } from 'react-toastify';
 import { useCart } from '../../hooks/CartContext';
 import { api } from '../../services/api.js';
 import { formatPrice } from '../../utils/formatPrice';
 import { Button } from '../Button';
 import { Container } from './styles';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 export function CartResume() {
   const [finalPrice, setFinalPrice] = useState(0);
@@ -13,7 +15,7 @@ export function CartResume() {
 
   const navigate = useNavigate();
 
-  const { cartProducts, clearCart } = useCart();
+  const { cartProducts } = useCart();
 
   useEffect(() => {
     const sumAllItens = cartProducts.reduce((acc, current) => {
@@ -25,32 +27,32 @@ export function CartResume() {
 
   const submitOrder = async () => {
     const products = cartProducts.map((product) => {
-      return { id: product.id, quantity: product.quantity };
+      return {
+        id: Number(product.id),
+        quantity: Number(product.quantity),
+        price: Number(product.price),
+      };
     });
 
     try {
-      const { status } = await api.post(
-        '/orders',
-        { products },
-        {
-          validateStatus: () => true,
-        },
-      );
+      const { data } = await api.post('/create-payment-intent', { products });
 
-      if (status === 200 || status === 201) {
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
-        clearCart();
-
-        toast.success('Pedido Realizado com sucesso!');
-      } else if (status === 409) {
-        toast.error('Falha ao realizar o seu pedido');
-      } else {
-        throw new Error();
-      }
-    } catch {
-      toast.error('🤖 Falha no sitema! Tente Novamente');
+      navigate('/checkout', {
+        state: data,
+      });
+    } catch (err) {
+      console.log(err);
+      toast.error('🤖 Falha no sitema! Tente Novamente', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        graggable: true,
+        progress: undefined,
+        theme: 'light',
+        transition: Bounce,
+      });
     }
   };
 
