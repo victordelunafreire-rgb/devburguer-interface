@@ -1,10 +1,10 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ProductImage = styled.img`
     height: 80px;
     width: 80px;
     border-radius: 16px;
-`
+`;
 
 export const ButtonGroup = styled.div`
     display: flex;
@@ -19,7 +19,7 @@ export const ButtonGroup = styled.div`
         width: 30px;
         color: ${(props) => props.theme.white};
         border-radius: 4px;
-        background-color: ${(props) => props.theme.purple;
+        background-color: ${(props) => props.theme.purple};
         transition: all 0.4s;
         border: none;
 
@@ -27,20 +27,20 @@ export const ButtonGroup = styled.div`
             background-color: ${(props) => props.theme.secondDarkPurple};
         }
     }
-`
+`;
 
 export const EmptyCart = styled.p`
     font-size: 20px;
     text-align: center;
     font-weight: bold;
-`
+`;
 
 export const TotalPrice = styled.p`
     font-weight: bold;
-`
+`;
 
 export const TrashImage = styled.img`
     height: 20px;
     width: 20px;
     cursor: pointer;
-`
+`;

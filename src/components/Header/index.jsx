@@ -29,7 +29,7 @@ export function Header() {
     <Container>
       <Content>
         <Navigation>
-          ${(props) => props.theme.white}
+          {(props) => props.theme.white}
           <div>
             <HeaderLink to='/' $isActive={pathname === '/'}>
               Home
@@ -43,7 +43,7 @@ export function Header() {
         <Options>
           <Profile>
             <UserCircle
-              color='${(props) => props.theme.white}'
+              color={(props) => props.theme.white}
               size={24}
               weight='thin'
             />
