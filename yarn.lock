@@ -497,10 +497,10 @@
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.11.tgz#a269e055e40e2f45873bae9d1a2fdccbd314ea3f"
   integrity sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==
 
-"@hookform/resolvers@^5.2.2":
-  version "5.2.2"
-  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-5.2.2.tgz#5ac16cd89501ca31671e6e9f0f5c5d762a99aa12"
-  integrity sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==
+"@hookform/resolvers@^5.4.0":
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-5.4.0.tgz#89ff709a08576766fbef849e5ec60e549a888006"
+  integrity sha512-EIsqr/t/qbinPIhGjMdtvutIN1Kk4uwbROE9/UQ93CAVGR7GkA7Y92+fX80OzXi/OB67jVFYwKGO1WzkxmkFZw==
   dependencies:
     "@standard-schema/utils" "^0.3.0"
 
@@ -1823,10 +1823,10 @@ react-dom@^19.2.4:
   dependencies:
     scheduler "^0.27.0"
 
-react-hook-form@^7.72.1:
-  version "7.72.1"
-  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.72.1.tgz#19a8bbeaf685934f4c9fc422294cc730ade2780e"
-  integrity sha512-RhwBoy2ygeVZje+C+bwJ8g0NjTdBmDlJvAUHTxRjTmSUKPYsKfMphkS2sgEMotsY03bP358yEYlnUeZy//D9Ig==
+react-hook-form@^7.77.0:
+  version "7.77.0"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.77.0.tgz#af7e1d90d00c0418a98cf00b6f9bd5b85587c6fb"
+  integrity sha512-Sslh9YDYc0GDlWT/lxasnIduNo4v3yyvqRGvmGKUre5AFjDs/HV9/OafHGD8d+sB2yoL4UIL9L8X9i0WlZZebg==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

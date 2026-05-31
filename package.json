@@ -12,7 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@hookform/resolvers": "^5.2.2",
+    "@hookform/resolvers": "^5.4.0",
     "@mui/icons-material": "^9.0.1",
     "@mui/material": "^9.0.1",
     "@phosphor-icons/react": "^2.1.10",
@@ -22,7 +22,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-hook-form": "^7.72.1",
+    "react-hook-form": "^7.77.0",
     "react-router-dom": "^7.14.2",
     "react-select": "^5.10.2",
     "react-toastify": "^11.1.0",
